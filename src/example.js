@@ -11,9 +11,9 @@ import './example.css';
 export default function ParamsExample() {
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>
-      <Route render={({ location }) => (
-        <Layout location={location}>
-          <Switch location={location}>
+      <Route render={() => (
+        <Layout>
+          <Switch>
             <Route path="/:id" children={<Child />} />
           </Switch>
         </Layout>
