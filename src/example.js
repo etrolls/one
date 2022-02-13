@@ -99,7 +99,7 @@ function Child() {
         </button>
       </div>
       <div class="col-md-5">
-        <iframe key="1" title={id} width="500" height="300" src={"https://www.youtube.com/embed/" + id + "?autoplay=1&controls=1&mute=1"} />
+        <iframe key="1" title={id} width="500" height="300" src={"https://www.youtube.com/embed/" + id + "?autoplay=1&controls=1&mute=0"} />
       </div>
     </div>
 
