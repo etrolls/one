@@ -12,11 +12,9 @@ export default function ParamsExample() {
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>
       <Route render={() => (
-        <Layout>
           <Switch>
             <Route path="/:id" children={<Child />} />
           </Switch>
-        </Layout>
       )} />
     </HashRouter>
   );
