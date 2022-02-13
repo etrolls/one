@@ -1,25 +1,30 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  useParams
+  useParams,
+  HashRouter
 } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import './example.css';
 
 export default function ParamsExample() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/:id" children={<Child />} />
-      </Switch>
-    </Router>
+    <HashRouter basename={process.env.PUBLIC_URL}>
+      <Route render={({ location }) => (
+        <Layout location={location}>
+          <Switch location={location}>
+            <Route path="/:id" children={<Child />} />
+          </Switch>
+        </Layout>
+      )} />
+    </HashRouter>
   );
 }
 
 function Child() {
   let { id } = useParams();
+  console.log("_id :", id);
   const [items, setItems] = useState({});
   const [filteredItems, setFilteredItems] = useState({});
   const [format, setFormat] = useState("mp4");
